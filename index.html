@@ -38,10 +38,9 @@ header .brand{font-size:1.8rem;line-height:1}
 .eg{margin-top:clamp(28px,6vw,64px);font-size:.85rem;letter-spacing:.45em;padding-inline-start:.45em}
 .hero .brand{font-size:clamp(5.5rem,26vw,15rem);line-height:.95;margin:0;letter-spacing:.01em;color:color-mix(in srgb,var(--ink) 35%,var(--bg))}
 .hero .cta{margin-top:0}
-.ctas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;justify-content:center;margin-top:26px;width:min(100%,420px)}
-@media (min-width:700px){.ctas{display:flex;flex-wrap:wrap;width:auto}}
+.ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px;width:min(100%,420px)}
 .ghost{}
-.ctas .cta{padding:13px 22px;font-size:.95rem;font-family:inherit;font-weight:600;letter-spacing:.02em;text-align:center;white-space:nowrap}
+.ctas .cta{flex:0 0 calc(50% - 5px);box-sizing:border-box;padding:13px 22px;font-size:.95rem;font-family:inherit;font-weight:600;letter-spacing:.02em;text-align:center;white-space:nowrap}
 .cta{display:inline-block;background:var(--acc);color:var(--onacc);border-radius:999px;padding:14px 34px;font-weight:600;text-decoration:none;font-size:1.05rem}
 .sec{transform-origin:100px 100px;animation:tick 60s steps(60) infinite}
 @keyframes tick{to{transform:rotate(360deg)}}
@@ -165,7 +164,7 @@ footer{text-align:center;color:var(--mute);padding:30px 5vw 40px;font-size:.9rem
     <div class="tag"><span>ELEGANT WATCHES</span><svg viewBox="0 0 64 100" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><rect x="19" y="2" width="24" height="30" rx="6"/><rect x="19" y="68" width="24" height="30" rx="6"/><circle cx="31" cy="50" r="25" style="fill:var(--bg)"/><circle cx="31" cy="50" r="19.5" stroke-width="2.4"/><path d="M31 36v3M31 61v3M17 50h3M42 50h3M31 50v-8M31 50h7"/><rect x="56" y="44" width="7" height="12" rx="3.5"/></svg></div>
     <div class="eg">EGYPT</div>
     <div class="ctas"><a class="cta" href="#shop" data-cat="all">Shop watches</a><a class="cta" href="#shop" data-cat="him">For Him</a><a class="cta" href="#shop" data-cat="her">For Her</a><a class="cta" href="#shop" data-cat="uni" hidden>Unisex</a><a class="cta" href="#shop" data-cat="bundles" hidden>Bundles</a></div>
-    <p class="trust" id="trust">Cash on delivery &middot; Flat shipping fee of 80 EGP</p>
+    <p class="trust" id="trust">Cash on delivery &middot; Delivery in Cairo and Giza &middot; Flat shipping fee of 80 EGP</p>
   </div>
 </section>
 <noscript><p style="text-align:center;padding:16px">Please open this page in a web browser (Chrome or Safari) to order.</p></noscript>
@@ -198,7 +197,7 @@ footer{text-align:center;color:var(--mute);padding:30px 5vw 40px;font-size:.9rem
         <label class="fld">Mobile number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" placeholder=" "><span class="err"></span></label>
         <label class="fld">Email<input name="email" type="email" inputmode="email" autocomplete="email" enterkeyhint="next" placeholder=" "><span class="err"></span></label></div>
       <div class="cks"><h2>Delivery address</h2>
-        <label class="fld">Governorate<select name="gov" autocomplete="address-level1"><option value="">Choose governorate</option><option>Cairo</option><option>Giza</option><option>Alexandria</option><option>Qalyubia</option><option>Dakahlia</option><option>Sharqia</option><option>Gharbia</option><option>Monufia</option><option>Beheira</option><option>Kafr El Sheikh</option><option>Damietta</option><option>Port Said</option><option>Ismailia</option><option>Suez</option><option>North Sinai</option><option>South Sinai</option><option>Fayoum</option><option>Beni Suef</option><option>Minya</option><option>Assiut</option><option>Sohag</option><option>Qena</option><option>Luxor</option><option>Aswan</option><option>Red Sea</option><option>New Valley</option><option>Matrouh</option></select><span class="err"></span></label>
+        <label class="fld">Governorate<select name="gov" autocomplete="address-level1"><option value="">Choose governorate</option><option>Cairo</option><option>Giza</option></select><span class="err"></span></label>
         <label class="fld">City / area<input name="area" autocomplete="address-level2" enterkeyhint="next" placeholder=" "><span class="err"></span></label>
         <label class="fld">Street, building, floor and apartment<textarea name="addr" rows="3" autocomplete="street-address" placeholder=" "></textarea><span class="err"></span></label>
         <label class="fld">Nearby landmark (optional)<input name="landmark" enterkeyhint="next" placeholder=" "></label>
@@ -283,7 +282,7 @@ function $(i){return document.getElementById(i)}
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 var ADM={tab:'w',ed:null,dr:null,dirty:false,msg:'',cd:0};
 function refresh(){calc();tabs();grid();bundles();cartUI();applySettings()}
-function applySettings(){$('ig').href=S.instagram;$('pol').textContent=S.policy;SHIP=+S.shipping||0;$('trust').textContent='Cash on delivery · Flat shipping fee of '+SHIP+' EGP';$('ckNote').textContent='Cash on delivery. Shipping of '+SHIP+' EGP is included in the total. '+(S.note||'')}
+function applySettings(){$('ig').href=S.instagram;$('pol').textContent=S.policy;SHIP=+S.shipping||0;$('trust').textContent='Cash on delivery · Delivery in Cairo and Giza · Flat shipping fee of '+SHIP+' EGP';$('ckNote').textContent='Cash on delivery. Shipping of '+SHIP+' EGP is included in the total. '+(S.note||'')}
 function readImg(f,cb){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var k=Math.min(1,520/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);var x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',.8))};im.src=r.result};r.readAsDataURL(f)}
 function admOpen(){ADM.tab='w';ADM.ed=null;ADM.cd=0;$('adm').hidden=false;admRender()}
 function thumb(u){return u?'<img src="'+esc(u)+'" alt="">':'<span style="width:70px;height:70px;background:var(--tint);border-radius:10px;display:block"></span>'}
