@@ -3,7 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ORVEN | Watches</title>
+<title>ORVEN | Elegant Watches</title>
+<meta name="description" content="Elegant watches for him and for her. Order online and pay on delivery.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ORVEN">
+<meta property="og:title" content="ORVEN | Elegant Watches">
+<meta property="og:description" content="Elegant watches for him and for her. Order online and pay on delivery.">
+<meta property="og:image" content="https://orven-store.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8C%9A%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600&display=swap">
 <style>
 :root{--bg:#efeeee;--surf:#fff;--tint:#f6f6f6;--ink:#111;--mute:#6b6b6b;--line:#d9d9d9;--acc:#111;--onacc:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -15,7 +25,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"Poppins",system
 button{font:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 .brand{font-family:"Anton","Arial Narrow",Impact,sans-serif;font-weight:400;letter-spacing:.03em}
-header{display:flex;align-items:center;justify-content:space-between;padding:16px 5vw;position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px)}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 5vw;position:sticky;top:0;z-index:5;background:var(--bg)}
 header .brand{font-size:1.8rem;line-height:1}
 .cartbtn{background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:9px 20px;font-weight:600}
 .hero{position:relative;margin:0 5vw;min-height:auto;display:grid;place-items:center;text-align:center;padding:28px 0 32px}
@@ -29,7 +39,7 @@ header .brand{font-size:1.8rem;line-height:1}
 .hero .brand{font-size:clamp(5.5rem,26vw,15rem);line-height:.95;margin:0;letter-spacing:.01em;color:color-mix(in srgb,var(--ink) 35%,var(--bg))}
 .hero .cta{margin-top:0}
 .ctas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;justify-content:center;margin-top:26px;width:min(100%,420px)}
-@media (min-width:700px){.ctas{grid-template-columns:repeat(4,auto);width:auto}}
+@media (min-width:700px){.ctas{display:flex;flex-wrap:wrap;width:auto}}
 .ghost{}
 .ctas .cta{padding:13px 22px;font-size:.95rem;font-family:inherit;font-weight:600;letter-spacing:.02em;text-align:center;white-space:nowrap}
 .cta{display:inline-block;background:var(--acc);color:var(--onacc);border-radius:999px;padding:14px 34px;font-weight:600;text-decoration:none;font-size:1.05rem}
@@ -44,7 +54,7 @@ header .brand{font-size:1.8rem;line-height:1}
 .grid:empty::after{content:"No watches here yet.";color:var(--mute);grid-column:1/-1;padding:30px 0}
 .card{background:var(--surf);border-radius:26px;padding:12px 12px 16px;display:flex;flex-direction:column;cursor:pointer}
 .fig{background:var(--tint);border-radius:18px;padding:16px}
-.fig img{width:100%;height:180px;object-fit:contain;display:block;mix-blend-mode:multiply}
+.fig img{width:100%;height:180px;object-fit:contain;display:block;background:#fff;border-radius:10px}
 .fig svg{width:100%;height:auto;max-height:180px;display:block}
 .card h3{margin:12px 6px 0;font-size:1.05rem;font-weight:600}
 .cat{color:var(--mute);font-size:.85rem;margin:0 6px}
@@ -97,10 +107,33 @@ aside .add{background:var(--ink);color:var(--bg)}
 .adm .in{max-width:860px;margin:auto}
 .ah{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .ac{background:var(--surf);border-radius:20px;padding:16px;margin-bottom:12px}
-.ac img{width:70px;height:70px;object-fit:contain;background:var(--tint);border-radius:10px;mix-blend-mode:multiply}
+.ac img{width:70px;height:70px;object-fit:contain;background:var(--tint);border-radius:10px}
 .ar{display:flex;gap:12px;align-items:center;justify-content:space-between}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
 .msg{color:var(--mute);font-size:.9rem;margin:8px 0 14px}
+#ckp{display:none;max-width:560px;margin:0 auto;padding:12px 4vw 130px}
+body.ckmode header,body.ckmode .hero,body.ckmode #shop,body.ckmode footer,body.ckmode noscript{display:none}
+body.ckmode #ckp{display:block}
+.ckbar{display:flex;align-items:center;justify-content:space-between;padding:4px 0 12px}
+.cks{background:var(--surf);border-radius:20px;padding:16px;margin-bottom:14px}
+.cks h2{margin:0 0 12px;font-size:1.05rem}
+.ci{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.ci:last-of-type{border-bottom:0}
+.ci img{width:56px;height:56px;object-fit:contain;background:#fff;border-radius:10px;flex:none}
+.ci .t{flex:1;min-width:0}
+.err{display:none;color:#c62828;font-size:.8rem;margin-top:4px}
+.fld.bad .err{display:block}
+.fld.bad input,.fld.bad textarea,.fld.bad select{border-color:#c62828}
+.pay{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1.5px solid var(--ink);border-radius:14px;font-weight:600}
+.ckfoot{position:fixed;left:0;right:0;bottom:0;background:var(--surf);padding:12px 4vw calc(12px + env(safe-area-inset-bottom,0px));display:none;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -6px 20px rgba(0,0,0,.08);z-index:20}
+body.ckmode .ckfoot{display:flex}
+.ckfoot[hidden]{display:none!important}
+.ckfoot small{color:var(--mute)}
+#ckp .ok{padding:30px 0}
+.ctas a[hidden]{display:none}
+.ctas a[aria-current]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--ink)}
+.trust{margin:14px 0 0;color:var(--mute);font-size:.85rem}
+.tabs:empty{display:none}
 footer{text-align:center;color:var(--mute);padding:30px 5vw 40px;font-size:.9rem}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;place-items:center;z-index:40;padding:16px}
 .modal.open{display:grid}
@@ -131,7 +164,8 @@ footer{text-align:center;color:var(--mute);padding:30px 5vw 40px;font-size:.9rem
     <h1 class="brand" aria-label="ORVEN"><span class="o" aria-hidden="true">O<svg class="hand" viewBox="0 0 24 80" fill="currentColor"><rect x="11.4" y="0" width="1.2" height="13"/><path fill-rule="evenodd" d="M12 13C15.6 16.4 16.6 18.4 16.6 20.4a4.6 4.6 0 0 1-9.2 0C7.4 18.4 8.4 16.4 12 13zM12 17.4a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2z"/><path d="M12 24C15 24 16 28 15.4 34C14.8 41 16.4 47 15.6 54C15.2 58 14 60 12 62C10 60 8.8 58 8.4 54C7.6 47 9.2 41 8.6 34C8 28 9 24 12 24Z"/><path fill-rule="evenodd" d="M12 62.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zM12 65.8a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4z"/></svg></span><span aria-hidden="true">RVEN</span></h1>
     <div class="tag"><span>ELEGANT WATCHES</span><svg viewBox="0 0 64 100" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><rect x="19" y="2" width="24" height="30" rx="6"/><rect x="19" y="68" width="24" height="30" rx="6"/><circle cx="31" cy="50" r="25" style="fill:var(--bg)"/><circle cx="31" cy="50" r="19.5" stroke-width="2.4"/><path d="M31 36v3M31 61v3M17 50h3M42 50h3M31 50v-8M31 50h7"/><rect x="56" y="44" width="7" height="12" rx="3.5"/></svg></div>
     <div class="eg">EGYPT</div>
-    <div class="ctas"><a class="cta" href="#shop" data-cat="all">Shop watches</a><a class="cta ghost" href="#shop" data-cat="him">For Him</a><a class="cta ghost" href="#shop" data-cat="her">For Her</a><a class="cta ghost" href="#shop" data-cat="bundles">Bundles</a></div>
+    <div class="ctas"><a class="cta" href="#shop" data-cat="all">Shop watches</a><a class="cta" href="#shop" data-cat="him">For Him</a><a class="cta" href="#shop" data-cat="her">For Her</a><a class="cta" href="#shop" data-cat="uni" hidden>Unisex</a><a class="cta" href="#shop" data-cat="bundles" hidden>Bundles</a></div>
+    <p class="trust" id="trust">Cash on delivery &middot; Flat shipping fee of 80 EGP</p>
   </div>
 </section>
 <noscript><p style="text-align:center;padding:16px">Please open this page in a web browser (Chrome or Safari) to order.</p></noscript>
@@ -150,6 +184,36 @@ footer{text-align:center;color:var(--mute);padding:30px 5vw 40px;font-size:.9rem
   <div class="policy"><b>POLICY</b><span id="pol">All sales are final. Watches cannot be returned or exchanged.</span></div>
   <div><span class="brand">ORVEN</span> © 2026</div>
 </footer>
+<div id="ckp">
+  <div class="ckbar"><button class="link" id="ckBack" type="button">&larr; Back to shop</button><span class="brand" style="font-size:1.5rem">ORVEN</span></div>
+  <div id="ckMain">
+    <h1 style="margin:0 0 14px;font-size:1.5rem">Checkout</h1>
+    <div class="cks"><h2>Your order</h2><div id="ckItems"></div>
+      <div class="sum"><span>Subtotal</span><span id="ckSub"></span></div>
+      <div class="sum"><span>Shipping</span><span id="ckShip"></span></div>
+      <div class="tot" style="padding:8px 0 0"><span>Total</span><span id="ckTot"></span></div></div>
+    <form id="ckForm" novalidate>
+      <div class="cks"><h2>Contact details</h2>
+        <label class="fld">Full name<input name="name" autocomplete="name" enterkeyhint="next" placeholder=" "><span class="err"></span></label>
+        <label class="fld">Mobile number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" placeholder=" "><span class="err"></span></label>
+        <label class="fld">Email<input name="email" type="email" inputmode="email" autocomplete="email" enterkeyhint="next" placeholder=" "><span class="err"></span></label></div>
+      <div class="cks"><h2>Delivery address</h2>
+        <label class="fld">Governorate<select name="gov" autocomplete="address-level1"><option value="">Choose governorate</option><option>Cairo</option><option>Giza</option><option>Alexandria</option><option>Qalyubia</option><option>Dakahlia</option><option>Sharqia</option><option>Gharbia</option><option>Monufia</option><option>Beheira</option><option>Kafr El Sheikh</option><option>Damietta</option><option>Port Said</option><option>Ismailia</option><option>Suez</option><option>North Sinai</option><option>South Sinai</option><option>Fayoum</option><option>Beni Suef</option><option>Minya</option><option>Assiut</option><option>Sohag</option><option>Qena</option><option>Luxor</option><option>Aswan</option><option>Red Sea</option><option>New Valley</option><option>Matrouh</option></select><span class="err"></span></label>
+        <label class="fld">City / area<input name="area" autocomplete="address-level2" enterkeyhint="next" placeholder=" "><span class="err"></span></label>
+        <label class="fld">Street, building, floor and apartment<textarea name="addr" rows="3" autocomplete="street-address" placeholder=" "></textarea><span class="err"></span></label>
+        <label class="fld">Nearby landmark (optional)<input name="landmark" enterkeyhint="next" placeholder=" "></label>
+        <label class="fld" style="margin-bottom:0">Order notes (optional)<input name="notes" enterkeyhint="done" placeholder=" "></label></div>
+      <div class="cks"><h2>Payment</h2><div class="pay">&#9679; Cash on delivery</div><p class="note" id="ckNote" style="margin:10px 0 0"></p></div>
+    </form>
+    <p class="note" id="ckFail" style="color:#c62828" hidden></p>
+  </div>
+  <div id="ckDone" hidden>
+    <div class="cks ok"><b>Thank you, your order is placed</b><span>Order number <span class="brand" id="ckOno"></span></span><p class="note" id="ckOkNote"></p></div>
+    <a class="chk wa" id="ckWa" target="_blank" rel="noopener" hidden>Send your order on WhatsApp</a>
+    <button class="chk" id="ckAgain" type="button" style="width:100%">Continue shopping</button>
+  </div>
+</div>
+<div class="ckfoot" id="ckFoot"><div><small>Total</small><br><b id="ckFT"></b></div><button class="chk" type="submit" form="ckForm" id="ckSubmit" style="padding:14px 30px">Place order</button></div>
 <div class="adm" id="adm" hidden></div>
 <div class="scrim" id="scrim"></div>
 <div class="drawer" id="drawer" aria-label="Cart">
@@ -162,23 +226,7 @@ footer{text-align:center;color:var(--mute);padding:30px 5vw 40px;font-size:.9rem
     <div class="tot"><span>Total</span><span id="total">0 EGP</span></div>
     <button class="chk" id="goCk">Checkout</button>
   </div>
-  <form id="vCk" class="view" hidden>
-    <h2>Delivery details</h2>
-    <label class="fld">Full name<input name="name" required autocomplete="name" placeholder=" "></label>
-    <label class="fld">Mobile number<input name="phone" type="tel" inputmode="numeric" required pattern="01[0-9]{9}" autocomplete="tel" placeholder=" " title="Egyptian mobile number, 11 digits starting with 01"></label>
-    <label class="fld">Email (Gmail)<input name="email" type="email" required autocomplete="email" placeholder=" "></label>
-    <label class="fld">Governorate and city<input name="city" required autocomplete="address-level1" placeholder=" "></label>
-    <label class="fld">Full address<textarea name="addr" rows="2" required autocomplete="street-address" placeholder=" "></textarea></label>
-    <label class="fld">Notes (optional)<input name="notes" placeholder=" "></label>
-    <p class="note" id="shipnote">Cash on delivery. Shipping of 80 EGP is included in the total. No returns or exchanges.</p>
-    <button class="chk" type="submit">Place order · <span id="ckTotal"></span></button>
-    <button class="link" type="button" id="backCart">Back to cart</button>
-  </form>
-  <div id="vOk" class="view" hidden>
-    <div class="ok"><b>Order placed</b><span>Order number <span id="ono" class="brand"></span></span><p class="note">We'll contact you on your number to confirm your order.</p></div>
-    <a class="chk wa" id="waBtn" target="_blank" rel="noopener" hidden>Send your order on WhatsApp</a>
-    <button class="chk" id="again">Continue shopping</button>
-  </div>
+
 </div>
 <div class="toast" id="toast"><span>Added to cart</span><button id="tview">View cart</button></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mn"><div class="mbox"><button class="mx" id="mx" aria-label="Close">×</button><div class="fig" id="mfig"></div><h2 id="mn"></h2><span class="cat" id="mc"></span><p class="bio" id="mb"></p><div class="row" style="padding-top:0"><span class="price" id="mp"></span><button class="add" id="ma">Add to cart</button></div></div></div>
@@ -198,8 +246,9 @@ function svg(w){if(w.img)return '<img src="'+w.img+'" alt="'+w.n+'">';if(!w.s)re
 var SHIP=S.shipping,cur='all',cart=[];
 try{cart=JSON.parse(localStorage.getItem('orven-cart')||'[]')}catch(e){cart=[]}
 function save(){try{localStorage.setItem('orven-cart',JSON.stringify(cart))}catch(e){}}
-function tabs(){var t=[['all','All'],['him','For Him'],['her','For Her'],['uni','Unisex'],['bundles','Bundles']];
-document.getElementById('tabs').innerHTML=t.map(function(x){return '<button class="tab" data-c="'+x[0]+'" aria-pressed="'+(cur===x[0])+'">'+x[1]+'</button>'}).join('')}
+function tabs(){var L={all:'All watches',him:'For Him',her:'For Her',uni:'Unisex',bundles:'Bundles'};
+[].forEach.call(document.querySelectorAll('.ctas a'),function(a){var c=a.dataset.cat;a.hidden=c!=='all'&&!(c==='bundles'?B.length:W.some(function(w){return w.c===c}));if(c===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+document.getElementById('tabs').innerHTML=cur==='all'?'':'<span style="color:var(--mute)">Showing <b style="color:var(--ink)">'+L[cur]+'</b></span> <button class="link" data-c="all" style="margin-inline-start:10px;padding:0">Show all</button>'}
 function grid(){if(cur==='bundles'){document.getElementById('grid').innerHTML=B.length?B.map(function(b){return '<article class="card"><div class="fig" style="display:flex;gap:4px">'+b.items.slice(0,3).map(function(i){var w=byId(i);return w&&w.img?'<img src="'+esc(w.img)+'" alt="" style="flex:1;min-width:0;height:110px">':''}).join('')+'</div><h3>'+esc(b.n)+'</h3><span class="cat">'+esc(b.d)+'</span><div class="row"><span><s style="color:var(--mute);font-size:.85rem">'+fmt(b.full)+'</s> <span class="price">'+fmt(b.p)+'</span></span><button class="add" data-a="'+b.id+'">Add to cart</button></div></article>'}).join(''):'<p style="grid-column:1/-1;color:var(--mute)">Bundles are coming soon.</p>';return}document.getElementById('grid').innerHTML=W.filter(function(w){return cur==='all'||w.c===cur}).map(function(w){
 return '<article class="card" data-z="'+w.id+'" tabindex="0"><div class="fig">'+svg(w)+'</div><h3>'+w.n+'</h3><span class="cat">'+CAT[w.c]+'</span><div class="row"><span class="price">'+fmt(w.p)+'</span><button class="add" data-a="'+w.id+'">Add to cart</button></div></article>'}).join('')}
 function bundles(){}
@@ -209,8 +258,8 @@ function find(i){return byId(i)||B.find(function(b){return b.id===i})}
 function cartUI(){cart=cart.filter(function(c){return find(c.id)});var n=0,t=0;
 document.getElementById('items').innerHTML=cart.length?cart.map(function(c){var p=find(c.id);n+=c.q;t+=p.p*c.q;
 return '<div class="it"><div>'+p.n+'<br><small>'+fmt(p.p)+'</small></div><div class="qty"><button data-m="'+c.id+'" aria-label="Decrease">−</button><span>'+c.q+'</span><button data-p="'+c.id+'" aria-label="Increase">+</button></div></div>'}).join(''):'<div class="empty">Your cart is empty. Add a watch or a bundle.</div>';
-var sh=n?SHIP:0;document.getElementById('cnt').textContent=n;document.getElementById('sub').textContent=fmt(t);document.getElementById('ship').textContent=fmt(sh);document.getElementById('total').textContent=fmt(t+sh);document.getElementById('ckTotal').textContent=fmt(t+sh);document.getElementById('goCk').disabled=!n}
-function view(v){['vCart','vCk','vOk'].forEach(function(i){document.getElementById(i).hidden=i!==v})}
+var sh=n?SHIP:0;document.getElementById('cnt').textContent=n;document.getElementById('sub').textContent=fmt(t);document.getElementById('ship').textContent=fmt(sh);document.getElementById('total').textContent=fmt(t+sh);ckHook();document.getElementById('goCk').disabled=!n}
+function view(v){}
 var tt;function toast(){var e=document.getElementById('toast');e.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){e.classList.remove('show')},2500)}
 function add(i){var c=cart.find(function(x){return x.id===i});if(c)c.q++;else cart.push({id:i,q:1});save();cartUI()}
 function sub(i){var c=cart.find(function(x){return x.id===i});if(!c)return;c.q--;if(c.q<=0)cart=cart.filter(function(x){return x.id!==i});save();cartUI()}
@@ -225,10 +274,7 @@ document.getElementById('mx').onclick=closeW;
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeW();if(e.key==='Enter'&&e.target.classList&&e.target.classList.contains('card'))openW(e.target.dataset.z)});
 document.getElementById('openCart').onclick=function(){view('vCart');drawer(true)};
 document.getElementById('tview').onclick=function(){document.getElementById('toast').classList.remove('show');view('vCart');drawer(true)};
-document.getElementById('goCk').onclick=function(){view('vCk')};
-document.getElementById('backCart').onclick=function(){view('vCart')};
-document.getElementById('again').onclick=function(){view('vCart');drawer(false)};
-document.getElementById('vCk').onsubmit=function(e){e.preventDefault();var f=e.target,g=function(k){return f.elements[k].value},no='OR-'+Math.floor(10000+Math.random()*90000);document.getElementById('ono').textContent=no;var L=['New order '+no,'Name: '+g('name'),'Phone: '+g('phone'),'Email: '+g('email'),'City: '+g('city'),'Address: '+g('addr')];if(g('notes'))L.push('Notes: '+g('notes'));L.push('','Items:');var sb=0;cart.forEach(function(c){var p=find(c.id);if(p){sb+=p.p*c.q;L.push('- '+p.n+' x'+c.q+' = '+fmt(p.p*c.q))}});L.push('','Subtotal: '+fmt(sb),'Shipping: '+fmt(SHIP),'Total: '+fmt(sb+SHIP)+' (cash on delivery)');if(S.endpoint){try{fetch(S.endpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:'New order '+no,order:no,name:g('name'),phone:g('phone'),email:g('email'),city:g('city'),address:g('addr'),notes:g('notes'),details:L.join('\n')})}).catch(function(){})}catch(x){}}var n=(S.whatsapp||'').replace(/\D/g,'');if(n.charAt(0)==='0')n='20'+n.slice(1);var wa=document.getElementById('waBtn');if(n){wa.href='https://wa.me/'+n+'?text='+encodeURIComponent(L.join('\n'));wa.hidden=false}else{wa.hidden=true}document.querySelector('#vOk .note').textContent=n?'Last step: tap the button below to send your order to us on WhatsApp.':'We will contact you on your number to confirm your order.';cart=[];save();cartUI();view('vOk');f.reset()};
+document.getElementById('goCk').onclick=function(){drawer(false);openCk()};
 document.getElementById('closeCart').onclick=function(){drawer(false)};
 document.getElementById('scrim').onclick=function(){drawer(false)};
 tabs();grid();bundles();cartUI();
@@ -237,7 +283,7 @@ function $(i){return document.getElementById(i)}
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 var ADM={tab:'w',ed:null,dr:null,dirty:false,msg:'',cd:0};
 function refresh(){calc();tabs();grid();bundles();cartUI();applySettings()}
-function applySettings(){$('ig').href=S.instagram;$('pol').textContent=S.policy;SHIP=+S.shipping||0;$('shipnote').textContent='Cash on delivery. Shipping of '+SHIP+' EGP is included in the total. '+(S.note||'')}
+function applySettings(){$('ig').href=S.instagram;$('pol').textContent=S.policy;SHIP=+S.shipping||0;$('trust').textContent='Cash on delivery · Flat shipping fee of '+SHIP+' EGP';$('ckNote').textContent='Cash on delivery. Shipping of '+SHIP+' EGP is included in the total. '+(S.note||'')}
 function readImg(f,cb){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var k=Math.min(1,520/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);var x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',.8))};im.src=r.result};r.readAsDataURL(f)}
 function admOpen(){ADM.tab='w';ADM.ed=null;ADM.cd=0;$('adm').hidden=false;admRender()}
 function thumb(u){return u?'<img src="'+esc(u)+'" alt="">':'<span style="width:70px;height:70px;background:var(--tint);border-radius:10px;display:block"></span>'}
@@ -270,6 +316,32 @@ $('adminBtn').onclick=admOpen;
 [].forEach.call(document.querySelectorAll('.ctas a'),function(a){a.addEventListener('click',function(){cur=a.dataset.cat;tabs();grid()})});
 applySettings();
 (async function(){try{if(!window.claude||!claude.use)return;var u=await claude.use('user');if(u&&u.canEdit&&await u.canEdit())$('adminBtn').hidden=false}catch(e){}})();
+
+var CK={done:false,busy:false};
+function openCk(){if(cart.length)location.hash='checkout'}
+function ckHook(){if(document.body.classList.contains('ckmode'))ckFill()}
+function ckMode(){var on=location.hash==='#checkout';if(on&&!cart.length&&!CK.done){location.hash='';return}document.body.classList.toggle('ckmode',on);if(on){$('ckMain').hidden=CK.done;$('ckDone').hidden=!CK.done;$('ckFoot').hidden=CK.done;ckFill();window.scrollTo(0,0)}else{CK.done=false}}
+function ckFill(){if(!cart.length&&!CK.done){location.hash='';return}var n=0,t=0,h='';cart.forEach(function(c){var p=find(c.id);if(!p)return;n+=c.q;t+=p.p*c.q;var im=p.img||(p.items&&byId(p.items[0])?byId(p.items[0]).img:'');h+='<div class="ci">'+(im?'<img src="'+esc(im)+'" alt="">':'')+'<div class="t"><b>'+esc(p.n)+'</b><br><small>'+fmt(p.p)+'</small></div><div class="qty"><button type="button" data-m="'+c.id+'" aria-label="Decrease">−</button><span>'+c.q+'</span><button type="button" data-p="'+c.id+'" aria-label="Increase">+</button></div></div>'});var sh=n?SHIP:0;$('ckItems').innerHTML=h;$('ckSub').textContent=fmt(t);$('ckShip').textContent=fmt(sh);$('ckTot').textContent=fmt(t+sh);$('ckFT').textContent=fmt(t+sh)}
+function ckErr(k,m){var l=$('ckForm').elements[k].closest('.fld');l.classList.toggle('bad',!!m);var e=l.querySelector('.err');if(e)e.textContent=m||''}
+function ckPhone(v){return v.replace(/[\s\-]/g,'').replace(/^(\+20|0020)/,'0')}
+function ckValidate(){var f=$('ckForm'),g=function(k){return f.elements[k].value.trim()},bad=null;
+[['name',g('name').length>=3,'Please enter your full name.'],['phone',/^01[0125][0-9]{8}$/.test(ckPhone(g('phone'))),'Enter a valid Egyptian mobile number (11 digits, starting with 01).'],['email',/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(g('email')),'Enter a valid email address.'],['gov',!!g('gov'),'Please choose your governorate.'],['area',g('area').length>=2,'Please enter your city or area.'],['addr',g('addr').length>=10,'Please enter your full address: street, building, floor and apartment.']].forEach(function(x){ckErr(x[0],x[1]?'':x[2]);if(!x[1]&&!bad)bad=x[0]});
+if(bad){f.elements[bad].focus();return false}return true}
+$('ckForm').addEventListener('submit',function(e){e.preventDefault();if(CK.busy||!cart.length)return;if(!ckValidate())return;
+var f=e.target,g=function(k){return f.elements[k].value.trim()},no='OR-'+Math.floor(10000+Math.random()*90000),sb=0,L=['New order '+no,'Name: '+g('name'),'Phone: '+ckPhone(g('phone')),'Email: '+g('email'),'Governorate: '+g('gov'),'City/area: '+g('area'),'Address: '+g('addr')];
+if(g('landmark'))L.push('Landmark: '+g('landmark'));if(g('notes'))L.push('Notes: '+g('notes'));L.push('','Items:');
+cart.forEach(function(c){var p=find(c.id);if(p){sb+=p.p*c.q;L.push('- '+p.n+' x'+c.q+' = '+fmt(p.p*c.q))}});
+L.push('','Subtotal: '+fmt(sb),'Shipping: '+fmt(SHIP),'Total: '+fmt(sb+SHIP)+' (cash on delivery)');
+var wn=(S.whatsapp||'').replace(/\D/g,'');if(wn.charAt(0)==='0')wn='20'+wn.slice(1);
+CK.busy=true;var b=$('ckSubmit');b.disabled=true;b.textContent='Placing order...';$('ckFail').hidden=true;
+var send=S.endpoint?fetch(S.endpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:'New order '+no,order:no,name:g('name'),phone:ckPhone(g('phone')),email:g('email'),governorate:g('gov'),area:g('area'),address:g('addr'),landmark:g('landmark'),notes:g('notes'),details:L.join('\n')})}).then(function(r){if(!r.ok)throw 0}):Promise.resolve();
+var tmo=new Promise(function(a,r){setTimeout(r,9000)});
+function finish(){CK.done=true;CK.busy=false;b.disabled=false;b.textContent='Place order';$('ckOno').textContent=no;var w=$('ckWa');if(wn){w.href='https://wa.me/'+wn+'?text='+encodeURIComponent(L.join('\n'));w.hidden=false}else{w.hidden=true}$('ckOkNote').textContent=wn?'Last step: tap the button below to send your order to us on WhatsApp.':'We will contact you on your number to confirm your order.';cart=[];save();cartUI();f.reset();$('ckMain').hidden=true;$('ckFoot').hidden=true;$('ckDone').hidden=false;window.scrollTo(0,0)}
+Promise.race([send,tmo]).then(finish,function(){if(wn){finish()}else{CK.busy=false;b.disabled=false;b.textContent='Place order';$('ckFail').textContent='We could not send your order. Please check your connection and try again, or contact us on Instagram.';$('ckFail').hidden=false}})});
+$('ckForm').addEventListener('input',function(e){var k=e.target.name;if(k&&e.target.closest('.fld').classList.contains('bad'))ckErr(k,'')});
+$('ckBack').onclick=function(){location.hash=''};
+$('ckAgain').onclick=function(){CK.done=false;location.hash=''};
+window.addEventListener('hashchange',ckMode);ckMode();
 </script>
 </body>
 </html>
